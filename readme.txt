@@ -12,6 +12,7 @@ $ git init
 Initialized empty Git repository in /Users/michael/learngit/.git/
 
 $ git add readme.txt
+$ git add .
 $ git commit -m "wrote a readme file"
 
 $ git status
