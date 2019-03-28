@@ -41,3 +41,9 @@ $ git checkout -- test.txt
 
 $ git rm test.txt
 $ git commit --m "remove test.txt"
+
+$ git remote add origin https://github.com/JamesGe19/Git.git
+$ git remote add origin git@github.com:JamesGe19/Git.git
+$ git push -u origin master
+$ git push origin master
+$ git clone git@github.com:JamesGe19/ITC.git
