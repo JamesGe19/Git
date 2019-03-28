@@ -37,5 +37,7 @@ $ git checkout -- readme.txt
 $ git reset HEAD readme.txt
 
 $ rm test.txt
-$ git rm test.txt
 $ git checkout -- test.txt
+
+$ git rm test.txt
+$ git commit --m "remove test.txt"
