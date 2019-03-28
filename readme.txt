@@ -1,6 +1,7 @@
 Git is a distributed version control system.
 Git is free software.
 
+$ ls
 $ mkdir Git
 $ cd Git
 $ cd /e/xxx
@@ -34,3 +35,7 @@ stage(index) -commit-> master(HEAD)
 
 $ git checkout -- readme.txt
 $ git reset HEAD readme.txt
+
+$ rm test.txt
+$ git rm test.txt
+$ git checkout -- test.txt
