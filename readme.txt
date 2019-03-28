@@ -27,3 +27,7 @@ $ cat readme.txt
 
 $ git reflog
 $ git reset --hard bff33ef
+
+Working Directory -add -> 
+Repository
+stage(index) -commit-> master(HEAD)
