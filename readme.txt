@@ -31,3 +31,6 @@ $ git reset --hard bff33ef
 Working Directory -add -> 
 Repository
 stage(index) -commit-> master(HEAD)
+
+$ git checkout -- readme.txt
+$ git reset HEAD readme.txt
