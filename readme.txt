@@ -54,7 +54,7 @@ $ git remote add origin git@gitee.com:JamesGe19/Git.git
 
 $ git remote rm origin
 $ git remote add github git@github.com:JamesGe19/Git.git
-$ git remote add github git@gitee.com:JamesGe19/Git.git
+$ git remote add gitee git@gitee.com:JamesGe19/Git.git
 $ git remote -v
 $ git push github master
 $ git push gitee master
