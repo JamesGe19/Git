@@ -129,4 +129,9 @@ $ git branch
 切换回master分支
 $ git checkout master
 
+合并指定分支到当前分支
+$ git merge dev
+
+删除分支
+$ git branch -d dev
 
