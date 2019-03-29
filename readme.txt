@@ -125,3 +125,6 @@ $ git checkout dev
 
 查看当前分支
 $ git branch
+
+切换回master分支
+$ git checkout master
