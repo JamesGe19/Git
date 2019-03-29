@@ -135,3 +135,10 @@ $ git merge dev
 删除分支
 $ git branch -d dev
 
+分支合并情况
+$ git log --graph --pretty=oneline --abbrev-commit
+
+合并时，如果可能Git会用Fast forward模式，该模式下删除分支后
+丢掉分支信息。强制禁用Fast forward模式，Git在merge时生成一个
+新的commit，这样从分支历史上就可以看出分支信息。
+$ git merge --no-ff -m "merge with no-ff" dev
