@@ -49,6 +49,8 @@ $ git log
 每个commit内容显示在一行
 $ git log --oneline
 $ git log --pretty=oneline
+显示最近一次提交
+$ git log -1
 
 回到最近的一次commit
 $ git reset --hard HEAD
@@ -81,7 +83,7 @@ $ git checkout -- readme.txt
 
 从版本库删除文件
 $ git rm test.txt
-$ git commit --m "remove test.txt"
+$ git commit -m "remove test.txt"
 
 $ git checkout
 用版本库里的版本替换工作区的版本，
@@ -171,3 +173,61 @@ $ git branch --set-upstream-to=github-source/dev dev
 抓取远程分支内容
 $ git pull
 
+把分叉的提交历史“整理”成一条直线，看上去更直观。
+缺点是本地的分叉提交已经被修改过了。
+$ git rebase
+rebase操作可以把本地未push的分叉提交历史整理成直线；
+rebase的目的是使得我们在查看历史提交的变化时更容易，
+因为分叉的提交需要三方对比。
+
+打新标签
+$ git tag v1.0
+标签对应的commit id是eff6e
+$ git tag v0.5 eff6e
+指定commit ID 打新标签并注释
+$ git tag -a v1.0 -m "version 1.0" eff6e
+
+查看标签（时间顺序）
+$ git tag
+按字母排序显示标签信息
+$ git show v0.5
+注意：标签总是和某个commit挂钩,如果这个commit既出现在master分支，
+又出现在dev分支，那么在这两个分支上都可以看到这个标签。
+
+删除标签
+$ git tag -d v0.1
+
+标签推送到远程库
+$ git push github-source v1.0
+
+一次性推送全部尚未推送到远程的本地标签：
+$ git push github-source --tags
+
+删除远程标签一下两步：
+先从本地删除：
+$ git tag -d v0.9
+从远程删除也是push，格式如下
+$ git push github-source :refs/tags/v0.9
+
+Git适当地显示不同的颜色
+$ git config --global color.ui true
+
+配置别名:
+co表示checkout，ci表示commit，br表示branch
+$ git config --global alias.co checkout
+$ git config --global alias.ci commit
+$ git config --global alias.br branch
+
+查看用户的配置信息：
+git config --global --list
+
+查看当前仓库配置信息：
+git config --glocal --list
+
+每个仓库的Git配置文件都放在.git/config文件中
+当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中
+
+强制添加 add xxxx
+$ git add -f xxxx
+检查ignore
+$ git check-ignore -v xxxx
