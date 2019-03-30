@@ -134,6 +134,8 @@ $ git merge dev
 
 删除分支
 $ git branch -d dev
+强行删除未合并的分支
+$ git branch -D dev
 
 分支合并情况
 $ git log --graph --pretty=oneline --abbrev-commit
@@ -142,3 +144,30 @@ $ git log --graph --pretty=oneline --abbrev-commit
 丢掉分支信息。强制禁用Fast forward模式，Git在merge时生成一个
 新的commit，这样从分支历史上就可以看出分支信息。
 $ git merge --no-ff -m "merge with no-ff" dev
+
+保存当前工作现场
+$ git stash
+
+查看工作现场
+$ git stash list
+
+恢复工作现场同时删除stash内容
+$ git stash pop
+相当于以下两个命令：
+恢复stash，但内容不删除
+$ git stash apply
+删除stash
+$ git stash drop
+
+多次stash保存现场，恢复其中一个现场
+$ git stash apply stash@{0}
+
+创建远程github-source的dev分支到本地
+$ git checkout -b dev github-source/dev
+
+指定本地dev分支与远程github-source/dev分支的链接
+$ git branch --set-upstream-to=github-source/dev dev
+
+抓取远程分支内容
+$ git pull
+
